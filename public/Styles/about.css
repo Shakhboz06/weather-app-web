@@ -1,0 +1,153 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('/fonts/Roboto/Roboto-Regular.ttf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+body {
+    font-family: 'Roboto';
+    background-color: #2A2A2A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    background-color: #fff;
+    margin: 20px;
+    max-width: 500px;
+    border-radius: 8px;
+    box-shadow: 2px -2px 3px 0px silver;
+    position: relative;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.student-list {
+    width: 100%;
+    padding: 20px;
+}
+
+.student {
+    margin-bottom: 20px;
+}
+
+.student h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.student p {
+    font-size: 1em;
+}
+
+.student a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.student a:hover {
+    text-decoration: underline;
+}
+
+.close-about {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+    transform: rotate(45deg);
+    transition: .3s linear;
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    right: 15px;
+}
+
+.close-about a {
+    text-decoration: none;
+    color: #000 !important;
+}
+
+/* Media Queries */
+
+/* Small devices (phones, 600px and down) */
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+        max-width: 90%;
+        margin: 10px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+        margin-bottom: 15px;
+    }
+
+    .student h2 {
+        font-size: 1.2em;
+        margin-bottom: 8px;
+    }
+
+    .student p {
+        font-size: 0.9em;
+    }
+}
+
+/* Medium devices (tablets, 768px and down) */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        max-width: 80%;
+        margin: 15px;
+    }
+
+    h1 {
+        font-size: 1.75em;
+        margin-bottom: 18px;
+    }
+
+    .student h2 {
+        font-size: 1.3em;
+        margin-bottom: 9px;
+    }
+
+    .student p {
+        font-size: 0.95em;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .container {
+        padding: 25px;
+        max-width: 600px;
+        margin: 20px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .student h2 {
+        font-size: 1.5em;
+    }
+
+    .student p {
+        font-size: 1em;
+    }
+}

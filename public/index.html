@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global weather app</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <link href='https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" href="Styles/style.css">
+</head>
+
+<body>
+    <main>
+        <header>
+            <div class="wrapper_1">
+                <div class="left_side">
+                    <a href="./pages/contact-page.html">
+                        <!-- Contact -->
+                        <svg width="30px" height="30px" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd"
+                            clip-rule="evenodd" fill="#fff">
+                            <path
+                                d="M24 23h-24v-13.275l2-1.455v-7.27h20v7.272l2 1.453v13.275zm-20-10.472v-9.528h16v9.527l-8 5.473-8-5.472zm14-.528h-12v-1h12v1zm0-3v1h-12v-1h12zm-7-1h-5v-3h5v3zm7 0h-6v-1h6v1zm0-2h-6v-1h6v1z" />
+                        </svg>
+                        <!-- <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#FFF"><path d="M185-80q-17 0-29.5-12.5T143-122v-105q0-90 56-159t144-88q-40 28-62 70.5T259-312v190q0 11 3 22t10 20h-87Zm147 0q-17 0-29.5-12.5T290-122v-190q0-70 49.5-119T459-480h189q70 0 119 49t49 119v64q0 70-49 119T648-80H332Zm148-484q-66 0-112-46t-46-112q0-66 46-112t112-46q66 0 112 46t46 112q0 66-46 112t-112 46Z"/></svg> -->
+                    </a>
+                    <div class="location_indicator">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px"
+                            fill="#fff">
+                            <path
+                                d="M480-480q33 0 56.5-23.5T560-560q0-33-23.5-56.5T480-640q-33 0-56.5 23.5T400-560q0 33 23.5 56.5T480-480Zm0 294q122-112 181-203.5T720-552q0-109-69.5-178.5T480-800q-101 0-170.5 69.5T240-552q0 71 59 162.5T480-186Zm0 106Q319-217 239.5-334.5T160-552q0-150 96.5-239T480-880q127 0 223.5 89T800-552q0 100-79.5 217.5T480-80Zm0-480Z" />
+                        </svg>
+                        <p>Potsdam, Germany</p>
+                    </div>
+                </div>
+            </div>
+            <div class="search_box">
+                <form name="fm">
+                    <input name="city" type="text" placeholder="Search">
+                    <button>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-search">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+            <div class="mode_indicator">
+                <div class="img_area">
+                    <a href="./pages/about-page.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px"
+                            fill="#FFF">
+                            <path
+                                d="M185-80q-17 0-29.5-12.5T143-122v-105q0-90 56-159t144-88q-40 28-62 70.5T259-312v190q0 11 3 22t10 20h-87Zm147 0q-17 0-29.5-12.5T290-122v-190q0-70 49.5-119T459-480h189q70 0 119 49t49 119v64q0 70-49 119T648-80H332Zm148-484q-66 0-112-46t-46-112q0-66 46-112t112-46q66 0 112 46t46 112q0 66-46 112t-112 46Z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </header>
+        <div class="wrapper">
+            <div class="weather_container">
+                <div class="headers">
+                    <div class="subheaders">
+                        <button class="today_btn">Today</button>
+                        <button class="tomorrow_btn">Tomorrow</button>
+                        <button class="weekly_btn">Weekly</button>
+                    </div>
+                </div>
+                <div class="infa_con">
+                    <div class="carousel-container">
+                        <div class="carousel">
+                        </div>
+                    </div>
+                </div>
+                <div class="weather_map">
+                    <div class="subheaders">
+                        <h2>Global Map</h2>
+                    </div>
+                    <div id="map">
+                    </div>
+                </div>
+            </div>
+            <div class="stats_container">
+                <div class="rain_container">
+                    <h3>Chance of rain</h3>
+                    <div class="bar_graph">
+                        <canvas id="rainChart"></canvas>
+                    </div>
+                </div>
+                <div class="cities">
+                    <div class="header">
+                        <h3>Other large cities</h3>
+                        <!-- <button>Show All ></button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </main>
+
+</body>
+
+</html>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script src='https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.js'></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script type="module" src="./JS/app.js"></script>
+<script type="module" src="./JS/map.js"></script>
+<script type="module" src="./JS/api.js"></script>
+<script type="module" src="./JS/weather.js"></script>
+<script type="module" src="./JS/carousel.js"></script>
+<script type="module" src="./JS/chart.js"></script>
