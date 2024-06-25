@@ -404,19 +404,39 @@ input:focus {
     margin: 25px auto;
 }
 
-/* Media Queries */
 
-/* Small devices (phones, 600px and down) */
+
 @media (max-width: 600px) {
     header {
-        flex-direction: column;
+        /* flex-direction: column; */
         align-items: flex-start;
+        /* position: relative; */
+        gap: 0;
+        width: 400px;
     }
-
+    .wrapper_1{
+        width: 300px;
+    }
+    .wrapper_1 .left_side{
+        /* width: 0px; */
+    }
     .search_box {
-        width: 100%;
+        width: fit-content;
+        margin-top: 25px;
+        width: 50%;
     }
-
+    .location_indicator svg{
+        width: 22px;
+        height: 22px;
+    }
+    .location_indicator p {
+        font-size: 20px;
+    }
+    .mode_indicator{
+        width: fit-content;
+        position: absolute;
+        right: 35px;
+    }
     .wrapper {
         flex-direction: column;
     }
@@ -436,6 +456,13 @@ input:focus {
     .weather_container .infa_con .hourly_weather {
         width: 100%;
         margin-bottom: 10px;
+    }
+    .weather_container .headers .subheaders{
+        display: block;
+        margin-top: 20px;
+    }
+    .weather_container .infa_con{
+        margin: 15px 0;
     }
 }
 
@@ -482,3 +509,6 @@ input:focus {
         width: 35%;
     }
 }
+
+
+
