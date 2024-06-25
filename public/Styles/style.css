@@ -412,7 +412,7 @@ input:focus {
         align-items: flex-start;
         /* position: relative; */
         gap: 0;
-        width: 400px;
+        width: 500px;
     }
     .wrapper_1{
         width: 300px;
