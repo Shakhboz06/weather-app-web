@@ -174,7 +174,7 @@ export const mapbox = (Api_key) => {
         map.boxZoom.enable()
 
     }
-    
+
     const displayDataOnMap = async (lon, lat) => {
         const response = await fetch(`https://api.openweathermap.org/data/3.0/onecall?lon=${lon}&lat=${lat}&units=metric&exclude=minutely&appid=${Api_key}`)
         const data = await response.json()
