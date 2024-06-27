@@ -430,7 +430,7 @@ input:focus {
         width: 185px!important;
     }
     header p{
-        font-size: 16px!important;
+        font-size: 14px!important;
     }
     .ic-menu{
         display: block;
@@ -455,7 +455,7 @@ input:focus {
         height: 30px;
     }
     .search_box input{
-        font-size: 16px!important;
+        font-size: 14px!important;
     }
     .mode_indicator{
         display: none;
