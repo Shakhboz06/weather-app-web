@@ -472,7 +472,6 @@ input:focus {
     }
     .current_weather,.hourly_weather {
         height: 220px!important;
-        width: 176px!important;
         font-size: 15px!important;
         margin-right: 5px!important;
     }
