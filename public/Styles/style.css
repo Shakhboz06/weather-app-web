@@ -499,6 +499,9 @@ input:focus {
     .weather_map{
         margin-top: 10px!important;
     }
+    .slick-next, .slick-prev{
+        display: none;
+    }
 }
 @media (max-width: 768px) {
     header {
