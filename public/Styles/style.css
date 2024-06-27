@@ -440,12 +440,14 @@ input:focus {
         width: 100%!important;
         justify-content: flex-start!important;
         align-items: flex-start!important;
+        
     }
     .left_side{
         min-width: 220px;
+        justify-content: flex-start!important;
     }
     .location_indicator{
-        justify-content: center!important;
+        justify-content: flex-start!important;
     }
     .wrapper_1 .left_side .l-page{
         display: none;
@@ -453,7 +455,7 @@ input:focus {
     .menu_active{
         position: absolute;
         display: block!important;
-        width: 100%!important;
+        width: 450px!important;
         height: 500px!important;
         background-color: green!important;
         top: 0;
