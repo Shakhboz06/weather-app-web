@@ -2,7 +2,7 @@ import { mapbox } from "./map.js"
 import { fetchApi, cityList } from "./api.js"
 
 let countryData = {}
-let Api_key = '5219afc63ca74b100c99e3a4b53c7cce'
+let Api_key
 
 const parseCountries = async () => {
     try {
@@ -16,9 +16,9 @@ const parseCountries = async () => {
 
 
 window.onload = async () => {
-    // const response = await fetch('/api/server')
-    // const getKey = await response.json()
-    // Api_key = getKey.key
+    const response = await fetch('/api/server')
+    const getKey = await response.json()
+    Api_key = getKey.key
     await parseCountries()
     const { reload, onsearch } = await fetchApi(Api_key, countryData)
     await reload()
@@ -27,16 +27,23 @@ window.onload = async () => {
 
     document.querySelector('form').onsubmit = async (event) => {
         event.preventDefault()
-        document.querySelector('.carousel').innerHTML = ''
-        if ($('.carousel').hasClass('slick-initialized')) {
-            $('.carousel').slick('unslick')
+        event.target.classList.toggle('fm_active')
+        if(document.querySelector('form input').value){
+            document.querySelector('.carousel').innerHTML = ''
+            if ($('.carousel').hasClass('slick-initialized')) {
+                $('.carousel').slick('unslick')
+            }
+            $('.carousel').empty()
+            
+            await onsearch()
+            document.querySelector('form input').value = ''
         }
-        $('.carousel').empty()
-
-        
-        await onsearch()
-        document.querySelector('form input').value = ''
     }
+    document.querySelector('.ic-menu').onclick = () =>{
+        document.querySelector('.menu_box').classList.add('menu_active')
+    }
+    document.querySelector('.close_box').onclick = () => document.querySelector('.menu_box').classList.remove('menu_active')
+
 }
 
 

@@ -6,22 +6,27 @@ import {
 import { slickCarousel } from "./carousel.js"
 import { barGraph } from "./chart.js"
 
+const celcius = document.querySelector('.menu_box .ind-cel')
+const farenheit = document.querySelector('.menu_box .ind-far')
+let unit = 'metric'
+
 
 export const fetchApi = async (Api_key, countryData) => {
     const reload = async () => {
         document.querySelector('.today_btn').classList.add('active_btn')
+
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(async (location) => {
                 const longtitude = location.coords.longitude
                 const latitude = location.coords.latitude
-                const api = `https://api.openweathermap.org/data/3.0/onecall?lat=${latitude}&lon=${longtitude}&units=metric&exclude=minutely&appid=${Api_key}`
+                const api = `https://api.openweathermap.org/data/3.0/onecall?lat=${latitude}&lon=${longtitude}&units=${unit}&exclude=minutely&appid=${Api_key}`
                 await weatherData(api)
             },
                 (error) => {
                     console.error('Error fetching location:', error)
                     const defaultLat = 40.7128;
                     const defaultLon = -74.0060;
-                    const api = `https://api.openweathermap.org/data/3.0/onecall?lat=${defaultLat}&lon=${defaultLon}&units=metric&exclude=minutely&appid=${Api_key}`;
+                    const api = `https://api.openweathermap.org/data/3.0/onecall?lat=${defaultLat}&lon=${defaultLon}&units=${unit}&exclude=minutely&appid=${Api_key}`;
                     weatherData(api)
                 }
             )
@@ -29,12 +34,13 @@ export const fetchApi = async (Api_key, countryData) => {
     }
 
     const onsearch = async () => {
+        let city = document.querySelector('form input').value.trim()
+        console.log(unit)
         try {
-            let city = document.querySelector('form input').value.trim()
             const response = await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${Api_key}`)
             const locationData = await response.json()
             const { lat, lon, name, country } = locationData[0]
-            const api = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&units=metric&exclude=minutely&appid=${Api_key}`
+            const api = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&units=${unit}&exclude=minutely&appid=${Api_key}`
             document.querySelector('.location_indicator p').innerText = `${name}, ${countryData[country]}`
             await weatherData(api)
         }
@@ -55,8 +61,8 @@ export const fetchApi = async (Api_key, countryData) => {
         const remain = 24 - now.getHours()
         const tomorrowData = data.hourly.slice(remain, remain + 24)
         data.tomorrow = tomorrowData
-        displayWeather(data)
-        currentWeather(data)
+        displayWeather(data, unit)
+        currentWeather(data, unit)
         barGraph(data.hourly)
     }
 
@@ -68,6 +74,22 @@ export const fetchApi = async (Api_key, countryData) => {
         document.querySelector('.location_indicator p').innerText = `${location.name}, ${countryData[location.country]}`
     }
 
+    document.querySelector('.menu_box .ind-cel').onclick = (event) => {
+        event.target.style.display = 'none'
+        farenheit.style.display = 'block'
+        unit = 'imperial'
+        reload()
+        document.querySelector('.city_container').innerHTML = ''
+        cityList(Api_key, countryData)
+    }
+    farenheit.onclick = (event) => {
+        event.target.style.display = 'none'
+        celcius.style.display = 'block'
+        unit = 'metric'
+        reload()
+        document.querySelector('.city_container').innerHTML = ''
+        cityList(Api_key, countryData)
+    }
 
     return {
         reload, onsearch
@@ -83,9 +105,10 @@ export const cityList = async (Api_key, countryData) => {
         [cities[i], cities[j]] = [cities[j], cities[i]]
     }
 
-    for(let i = 0; i < 3; i++){
-        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cities[i]}&units=metric&appid=${Api_key}`)
+    for (let i = 0; i < 3; i++) {
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cities[i]}&units=${unit}&appid=${Api_key}`)
         const cityData = await response.json()
-        displayCityWeather(cityData, countryData)
+        displayCityWeather(cityData, countryData, unit)
+
     }
 }
