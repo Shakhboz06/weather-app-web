@@ -500,7 +500,7 @@ input:focus {
         margin-top: 10px!important;
     }
     .slick-next, .slick-prev{
-        display: none;
+        display: none!important;
     }
 }
 @media (max-width: 768px) {
