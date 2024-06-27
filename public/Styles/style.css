@@ -421,14 +421,12 @@ input:focus {
     header{
         /* width: 450px!important; */
         flex-direction: row!important;
-        justify-content: space-between!important;
+        justify-content: center!important;
         align-items: flex-end!important;
         gap: 10px;
         padding: 0!important;
     }
-    header .left_side{
-        width: 185px!important;
-    }
+
     header p{
         font-size: 14px!important;
     }
@@ -439,7 +437,12 @@ input:focus {
         justify-content: flex-start!important;
         align-items: flex-start!important;
     }
-    
+    .left_side{
+        justify-content: flex-start;
+    }
+    .location_indicator{
+        justify-content: center!important;
+    }
     .wrapper_1 .left_side .ic-form{
         display: none;
     }
