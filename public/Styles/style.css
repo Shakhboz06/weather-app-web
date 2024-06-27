@@ -455,7 +455,7 @@ input:focus {
     .menu_active{
         position: absolute;
         display: block!important;
-        min-width: 370px!important;
+        min-width: 360px!important;
         height: 500px!important;
         background-color: green!important;
         top: 0;
