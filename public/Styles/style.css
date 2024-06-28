@@ -15,8 +15,7 @@ body {
     font-family: 'Roboto';
     background-color: #2A2A2A;
     background-size: cover;
-    background-position: center center;
-    margin: 0 auto;
+    background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -44,7 +43,6 @@ header {
 
 .left_side {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     gap: 20px;
 }
@@ -70,7 +68,6 @@ header {
 
 .left_side .location_indicator {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     gap: 5px;
     font-weight: 600;
@@ -110,14 +107,12 @@ header {
 }
 
 .menu_box a {
-    display: inline-flex;
-    align-items: center;
+    display: flex;
+    align-items: flex-end;
     margin-bottom: 15px;
     color: #fff;
     text-decoration: none;
     transition: color 0.3s ease;
-    display: flex;
-    align-items: flex-end !important;
 }
 
 .menu_box a:hover {
@@ -285,7 +280,6 @@ input:focus {
     padding: 10px;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     gap: 10px;
 }
 
@@ -327,7 +321,6 @@ input:focus {
     position: absolute;
     top: 0;
     right: 0;
-    
 }
 
 .weather_container .weather_map {
@@ -354,17 +347,14 @@ input:focus {
 
 .stats_container {
     width: 100%;
-    
 }
 
-
-.cities{
+.cities {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     height: 423px;
-    
-} 
+}
 
 .marker {
     color: #000;
@@ -377,7 +367,8 @@ input:focus {
     margin-top: 25px;
     margin-bottom: 10px;
 }
-.stats_container .city_container{
+
+.stats_container .city_container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -386,6 +377,7 @@ input:focus {
     transition: box-shadow 0.3s;
     gap: 20px;
 }
+
 .stats_container .cities .city_box {
     display: flex;
     justify-content: space-between;
@@ -432,7 +424,6 @@ input:focus {
     background: #F5F5F5;
     border-radius: 5px;
     cursor: pointer;
-    /* padding: 10px; */
     height: 30px;
 }
 
@@ -461,8 +452,6 @@ input:focus {
     font-size: 14px;
     color: #333;
     position: relative;
-    position: absolute;
-    font-family: 'Roboto';
     border: 2px solid #fff;
 }
 
@@ -512,7 +501,7 @@ input:focus {
 
 .active-1 {
     width: 120px !important;
-    height: 100%!important;
+    height: 100% !important;
 }
 
 .layer-control .active {
@@ -524,7 +513,6 @@ input:focus {
     height: 10px;
 }
 
-.mapboxgl-ctrl-bottom-left,
 .mapboxgl-ctrl-bottom-left,
 .mapboxgl-ctrl-bottom-right {
     display: none;
