@@ -76,7 +76,7 @@ header {
     display: none!important;
 }
 .search_box {
-    width: 600px;
+    width: 400px;
 }
 
 form {
@@ -98,10 +98,11 @@ input {
 }
 
 .mode_indicator {
-    width: 300px;
+    width: fit-content;
     display: flex;
     justify-content: flex-end;
     cursor: pointer;
+    padding-right: 10px!important;
 }
 
 header button {
@@ -416,7 +417,7 @@ input:focus {
 .rain_container h3 {
     margin: 10px 0!important;
 }
-@media (max-width: 500px) {
+@media (max-width: 700px) {
     body{
         background-color: rgba(17, 24, 39, 1);
     }
@@ -440,9 +441,11 @@ input:focus {
         width: 100%!important;
         justify-content: flex-start!important;
         align-items: flex-start!important;
+        margin-bottom: 0!important;
         
     }
     .left_side{
+        width: 100%;
         min-width: 220px;
         justify-content: flex-start!important;
     }
@@ -760,96 +763,338 @@ input:focus {
 }
 
     
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: flex-start;
+@media (min-width: 700px) and (max-width: 830px)  {   
+    header{
+        flex-direction: row!important;
+        justify-content: center!important;
+        align-items: flex-end!important;
+        gap: 10px;
+        position: relative;
+    }
+    header p{
+        font-size: 17px!important;
+    }
+    .wrapper_1{
+        width: 100%!important;
+        justify-content: flex-start!important;
+        align-items: flex-start!important;
+        margin-bottom: 0!important;
+        
+    }
+    .left_side{
+        width: 100%;
+        min-width: 220px;
+        justify-content: flex-start!important;
+    }
+    .location_indicator{
+        justify-content: flex-start!important;
     }
     .location_indicator svg{
+        width: 25px;
+        height: 25px;
+    }
+    .wrapper_1 .left_side .l-page{
+        display: none;
+    }
+    .menu_active{
+        position: absolute;
+        display: block!important;
+        min-width: 360px!important;
+        height: 500px!important;
+        background-color: green!important;
+        top: 0;
+        padding: 10px;
+        z-index: 5;
+    }
+
+    .menu_active a{
+        justify-content: flex-start;
+    }
+    .menu_active .img_area{
+        display: block!important;
+    }
+    .menu_active .temp-options{
+        display: flex;
+    }
+    .menu_active .box{
+        width: 50px;
+        height: 20px;
+        background-color: #fff;
+    }
+    .menu_active .ind-cel{
+        width: 20px;
+        height: 100%;
+        background-color: #000;
+        border-radius: 50%;
+    }
+    .menu_active .ind-far{
+        width: 20px;
+        height: 100%;
+        background-color: #000;
+        border-radius: 50%;
+        float: right;
+        display: none;
+    }
+    .menu_box .ind_active{
+        display: block;
+    }
+    .search_box{
+        width: 100%!important;
+        transition: 0.3s linear;
+    }
+    .search_box svg{
+        width: 23px;
+        height: 23px;
+    }
+    .search_box button{
+        width: 35px;
+        height: 30px;
+    }
+    .search_box input{
+        font-size: 17px!important;
+    }
+    form input{
+        width: 0!important;
+        background-color: rgba(17, 24, 39, 1)!important;
+        transition: 0.7s linear;
+    }
+    .fm_active{
+        width: 100%;
+    }
+    .fm_active input{
+        width: 100%!important;
+        transition: 0.7s linear;
+        background-color: rgba(55, 65, 81, 1)!important;
+        /* transform: translateX(0); */
+    }
+    .mode_indicator{
+        display: none;
+    }
+    .weather_container{
+        padding: 0px;
+    }
+    .weather_container .headers .subheaders{
+        margin-top: 10px;
+        flex-direction: row;
+    }
+    .weather_container .headers button{
+        font-size: 16px;
+    }
+    .current_weather,.hourly_weather {
+        height: 220px!important;
+        font-size: 15px!important;
+        margin-right: 5px!important;
+    }
+    .info_forecast img{
+        width: 45px;
+        width: 45px;
+        top: -5px!important;
+    }
+    .stats_container{
+        padding: 0;
+        margin-top: 20px;
+    }
+    .rain_container{
+        margin-bottom: 30px;
+    }
+    .bar_graph{
+        margin: 0!important;
+        width: 100%!important;
+        margin-bottom: 20px;
+    }
+    .rain_container h3{
+        margin-bottom: 10px!important;
+    }
+    
+    .weather_map{
+        margin-top: 10px!important;
+    }
+    .slick-next, .slick-prev{
+        display: none!important;
+    }
+    .temp-options {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .temp-options .box {
+        width: 50px;
+        height: 25px;
+        background-color: #ccc;
+        border-radius: 25px;
+        position: relative;
+        cursor: pointer;
+    }
+    
+    .temp-options .ind-cel,
+    .temp-options .ind-far {
+        width: 23px;
+        height: 23px;
+        background-color: #fff;
+        border-radius: 50%;
+        position: absolute;
+        top: 1px;
+        transition: transform 0.3s ease;
+    }
+    
+    .temp-options .ind-cel {
+        transform: translateX(1px);
+    }
+    
+    .temp-options .ind-far {
+        transform: translateX(26px);
+        display: none;
+    }
+    
+    .temp-options .box.active .ind-cel {
+        transform: translateX(26px);
+    }
+    
+    .temp-options .box.active .ind-far {
+        display: block;
+        transform: translateX(1px);
+    }
+    
+    .temp-options .span-1,
+    .temp-options .span-2 {
+        font-size: 14px;
+        color: #fff;
+    }
+    
+    .menu_box {
+        display: none;
+        background-color: #1a202c!important; /* Dark background color */
+        padding: 20px;
+        border-radius: 12px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 10;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        animation: slideDown 0.3s ease-in-out;
+    }
+
+    .menu_box .close_box {
+        font-family: serif;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 24px;
+        color: #fff;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: background-color 0.3s ease;
+        transform: rotate(45deg);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        animation: slideDown 0.3s ease-in-out;
+    }
+
+    
+
+    .menu_box a {
+        display: inline-flex;
+        align-items: center;
+        margin-bottom: 15px;
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        display: flex;
+        align-items: flex-end!important;
+    }
+    
+    .menu_box p{
+        font-size: 18px!important;
+    }
+    .menu_box a:hover {
+        color: #63b3ed;
+    }
+    
+    .menu_box a svg {
+        margin-right: 10px;
+    }
+
+    .menu_box .img_area a {
+        display: flex;
+        align-items: flex-start!important;
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .menu_box .img_area a:hover {
+        color: #63b3ed;
+    }
+
+    .menu_box .img_area a svg {
+        margin-right: 10px;
+        width: 25px;
+        height: 25px;
+    }
+
+    .menu_box .temp-options {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+
+    .menu_box .temp-options .box {
+        width: 40px;
+        height: 21px;
+        background-color: #718096;
+        border-radius: 25px;
+        position: relative;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .menu_box .temp-options .ind-cel,
+    .menu_box .temp-options .ind-far {
         width: 20px;
         height: 20px;
-    }
-    .wrapper_1 {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-
-    .search_box {
-        width: 100%;
-        margin-top: 10px;
+        background-color: #fff;
+        border-radius: 50%;
+        position: absolute;
+        top: 1px;
+        transition: transform 0.3s ease;
     }
 
-    .mode_indicator {
-        width: 100%;
-        justify-content: flex-start;
+    .menu_box .temp-options .ind-cel {
+        transform: translateX(1px);
     }
 
-    .wrapper {
-        flex-direction: column;
+    .menu_box .temp-options .ind-far {
+        transform: translateX(20px);
+        display: none;
     }
 
-    .wrapper .weather_container,
-    .stats_container {
-        width: 100%;
+    .menu_box .temp-options .box.active .ind-cel {
+        transform: translateX(31px);
     }
 
-    .weather_container .headers,
-    .subheaders {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
+    .menu_box .temp-options .box.active .ind-far {
+        display: block;
+        transform: translateX(1px);
     }
 
-    .weather_container .infa_con .current_weather,
-    .weather_container .infa_con .hourly_weather {
-        width: 100%;
-        margin-bottom: 10px;
+    .menu_box .temp-options .span-1,
+    .menu_box .temp-options .span-2 {
+        font-size: 16px;
+        color: #fff;
+    }
+    .ic-menu {
+        display: block!important;
+        cursor: pointer;
     }
 }
 
-@media (max-width: 600px) {
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
 
-    .wrapper_1 {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-
-    .search_box {
-        width: 100%;
-        margin-top: 10px;
-    }
-
-    .mode_indicator {
-        width: 100%;
-        justify-content: flex-start;
-    }
-
-    .wrapper {
-        flex-direction: column;
-    }
-
-    .wrapper .weather_container,
-    .stats_container {
-        width: 100%;
-    }
-
-    .weather_container .headers,
-    .subheaders {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
-
-    .weather_container .infa_con .current_weather,
-    .weather_container .infa_con .hourly_weather {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-}
 
 @media (min-width: 992px) {
     .wrapper .weather_container {
