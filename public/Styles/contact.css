@@ -137,9 +137,7 @@ body {
     font-family: 'Roboto';
 }
 
-/* Media Queries */
 
-/* Small devices (phones, 600px and down) */
 @media (max-width: 600px) {
     .container {
         width: 90%;
@@ -171,7 +169,7 @@ body {
     }
 }
 
-/* Medium devices (tablets, 768px and down) */
+
 @media (max-width: 768px) {
     .container {
         width: 80%;
@@ -201,7 +199,7 @@ body {
     }
 }
 
-/* Large devices (desktops, 992px and up) */
+
 @media (min-width: 992px) {
     .container {
         width: 700px;
