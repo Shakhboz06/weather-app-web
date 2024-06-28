@@ -77,14 +77,18 @@ export const fetchApi = async (Api_key, countryData) => {
     document.querySelector('.menu_box .ind-cel').onclick = (event) => {
         event.target.style.display = 'none'
         farenheit.style.display = 'block'
+        farenheit.classList.add('unit_active')
+        event.target.classList.remove('unit_active')
         unit = 'imperial'
         reload()
         document.querySelector('.city_container').innerHTML = ''
         cityList(Api_key, countryData)
     }
-    farenheit.onclick = (event) => {
+    document.querySelector('.menu_box .ind-far').onclick = (event) => {
         event.target.style.display = 'none'
         celcius.style.display = 'block'
+        celcius.classList.add('unit_active')
+        event.target.classList.remove('unit_active')
         unit = 'metric'
         reload()
         document.querySelector('.city_container').innerHTML = ''
