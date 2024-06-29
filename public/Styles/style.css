@@ -451,7 +451,7 @@ input:focus {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     font-size: 14px;
     color: #333;
-    position: relative;
+    /* position: relative; */
     border: 2px solid #fff;
 }
 

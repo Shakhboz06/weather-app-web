@@ -120,11 +120,11 @@ export const mapbox = (Api_key) => {
                 }
             })
 
-            // Remove all existing markers
+     
             markers.forEach(({ marker }) => marker.remove())
             markers = []
 
-            // Refresh the initial marker if no markers are present yet
+     
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(async (location) => {
                     const { longitude, latitude } = location.coords
