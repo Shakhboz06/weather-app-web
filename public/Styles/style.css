@@ -69,6 +69,7 @@ header {
 .left_side .location_indicator {
     display: flex;
     align-items: center;
+    justify-content: flex-start;
     gap: 5px;
     font-weight: 600;
     font-size: 18px;
@@ -527,7 +528,52 @@ input:focus {
 .rain_container h3 {
     margin: 10px 0 !important;
 }
+@media(max-width: 400px){
+    header{
+        gap: 0!important;
+    }
+    .wrapper_1 .left_side{
+        gap: 5px;
+    }
 
+    .wrapper_1 .left_side svg{
+        width: 20px;
+        height: 19px;
+    }
+    .wrapper_1 .left_side .location_indicator{
+        width: fit-content;
+        gap: 2px;
+    }
+    .location_indicator p{
+        font-size: 13px!important;
+    }
+    .search_box .fm_active input{
+        height: 25px;
+        font-size: 12px!important;
+    }
+    .search_box .fm_active button{
+        height: 25px!important;
+        width: 30px!important;
+    }
+    .search_box form button{
+        height: 25px!important;
+        width: 25px!important;
+    }
+    .search_box .fm_active svg{
+        height: 15px;
+    }
+    .weather_container .infa_con .current_weather, 
+    .weather_container .infa_con .hourly_weather{
+     padding: 0 2px;
+     font-size: 14px!important;
+     gap: 20px;
+    }
+}
+@media(max-width:600px){
+    .location_indicator{
+        width: max-content;
+    }
+}
 @media (max-width: 700px) {
     body {
         background-color: rgba(17, 24, 39, 1);
@@ -920,8 +966,35 @@ input:focus {
         cursor: pointer;
     }
 }
-
-@media (min-width: 992px) {
+@media(min-width: 831px) and (max-width:1049px){
+    header{
+        gap: 20px;
+    }
+    .wrapper_1 .location_indicator{
+        width: 300px;
+        justify-content: flex-start;
+    }
+    .ic-menu{
+        display: none;
+    }
+    form input {
+        width: 0 !important;
+        background-color: rgba(17, 24, 39, 1) !important;
+        transition: 0.7s linear;
+    }
+    .fm_active {
+        width: 100%;
+    }
+    .fm_active input {
+        width: 75% !important;
+        transition: 0.7s linear;
+        background-color: rgba(55, 65, 81, 1) !important;
+    }
+    .mode_indicator{
+        width: fit-content;
+    }
+}
+@media (min-width: 1050px) {
     .wrapper .weather_container {
         width: 65%;
     }
