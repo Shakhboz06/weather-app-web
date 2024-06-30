@@ -528,10 +528,8 @@ input:focus {
 .rain_container h3 {
     margin: 10px 0 !important;
 }
-.mapboxgl-ctrl-fullscreen {
+.mapboxgl-ctrl-fullscreen, .mapboxgl-ctrl-icon {
     display: block!important;
-    /* position: absolute; */
-    /* top: 50% */
 }
 @media(max-width: 400px){
     header{

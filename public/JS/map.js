@@ -146,7 +146,7 @@ export const mapbox = (Api_key) => {
             controlPanel.firstElementChild.style.display = controlPanel.classList.contains('active-1') ? 'none' : 'block'
         }
 
-        map.addControl(new mapboxgl.FullscreenControl())
+        map.addControl(new mapboxgl.FullscreenControl({container: document.querySelector('#map')}))
         map.addControl(new mapboxgl.GeolocateControl({
             positionOptions: {
                 enableHighAccuracy: false,
