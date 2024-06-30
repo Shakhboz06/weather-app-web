@@ -530,10 +530,14 @@ input:focus {
 }
 @media(max-width: 400px){
     header{
-        gap: 0!important;
+        gap: 5px!important;
+    }
+    .wrapper_1{
+        width: fit-content!important;
     }
     .wrapper_1 .left_side{
         gap: 5px;
+        min-width: unset;
     }
 
     .wrapper_1 .left_side svg{
@@ -541,11 +545,14 @@ input:focus {
         height: 19px;
     }
     .wrapper_1 .left_side .location_indicator{
-        width: fit-content;
         gap: 2px;
     }
     .location_indicator p{
         font-size: 13px!important;
+    }
+    .search_box{
+        width: fit-content!important;
+        /* width: 300px!important; */
     }
     .search_box .fm_active input{
         height: 25px;
