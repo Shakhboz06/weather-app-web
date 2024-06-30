@@ -541,8 +541,8 @@ input:focus {
     }
 
     .wrapper_1 .left_side svg{
-        width: 20px;
-        height: 19px;
+        width: 15px;
+        height: 14px;
     }
     .wrapper_1 .left_side .location_indicator{
         gap: 2px;
@@ -552,7 +552,6 @@ input:focus {
     }
     .search_box{
         width: fit-content!important;
-        /* width: 300px!important; */
     }
     .search_box .fm_active input{
         height: 25px;

@@ -55,8 +55,8 @@ export const mapbox = (Api_key) => {
         const initializeMapLayers = () => {
             const layers = [
                 { id: 'clouds', layer: 'clouds_new', visible: false },
-                { id: 'temperature', layer: 'temp_new', visible: false },
-                { id: 'precipitation', layer: 'precipitation_new', visible: true },
+                { id: 'temperature', layer: 'temp_new', visible: true },
+                { id: 'precipitation', layer: 'precipitation_new', visible: false },
                 { id: 'wind', layer: 'wind_new', visible: false }
             ]
 
