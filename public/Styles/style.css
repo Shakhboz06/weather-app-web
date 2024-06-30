@@ -529,7 +529,9 @@ input:focus {
     margin: 10px 0 !important;
 }
 .mapboxgl-ctrl-fullscreen {
-    display: block;
+    display: block!important;
+    /* position: absolute; */
+    /* top: 50% */
 }
 @media(max-width: 400px){
     header{
