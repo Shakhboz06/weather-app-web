@@ -1011,6 +1011,14 @@ input:focus {
     .stats_container {
         width: 35%;
     }
+    header .left_side{
+        justify-content: flex-start;
+        gap: 100px;
+    }
+    header .wrapper_1{
+        min-width: 400px;
+        width: fit-content;
+    }
     .left_side .l-page {
         display: none;
     }
