@@ -356,6 +356,19 @@ input:focus {
     justify-content: flex-end;
     height: 423px;
 }
+.city_box .names p{
+    font-size: 20px;
+    font-weight: 600;
+}
+.city_box .names h2{
+    font-size: 18px;
+    color: #ccc;
+    font-weight: 500;
+}
+.city_box .names h3{
+    font-size: 16px;
+    color: #999;
+}
 
 .marker {
     color: #000;

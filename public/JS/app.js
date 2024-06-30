@@ -2,7 +2,7 @@ import { mapbox } from "./map.js"
 import { fetchApi, cityList } from "./api.js"
 
 let countryData = {}
-let Api_key
+let Api_key = '5219afc63ca74b100c99e3a4b53c7cce'
 
 const parseCountries = async () => {
     try {
@@ -16,9 +16,9 @@ const parseCountries = async () => {
 
 
 window.onload = async () => {
-    const response = await fetch('/api/server')
-    const getKey = await response.json()
-    Api_key = getKey.key
+    // const response = await fetch('/api/server')
+    // const getKey = await response.json()
+    // Api_key = getKey.key
     await parseCountries()
     const { reload, onsearch } = await fetchApi(Api_key, countryData)
     await reload()
