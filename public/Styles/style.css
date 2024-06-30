@@ -559,6 +559,10 @@ input:focus {
         height: 25px!important;
         width: 25px!important;
     }
+    .search_box form button svg{
+        height: 15px!important;
+        width: 15px!important;
+    }
     .search_box .fm_active svg{
         height: 15px;
     }
