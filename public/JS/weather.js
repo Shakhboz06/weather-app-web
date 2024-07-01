@@ -107,7 +107,7 @@ export const displayCityWeather = async (data, countryData,unit) => {
     img.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`
     temp.innerText = `${Math.round(data.main.temp)}${unit == "metric" ? '°C' : '°F'}`
     weather_cond.append(img, temp)
-    names.append(country, cityName, weather)
+    names.append(cityName, country, weather)
     city_box.append(names, weather_cond)
     document.querySelector('.city_container').append(city_box)
 }
