@@ -35,8 +35,8 @@ export const mapbox = (Api_key) => {
                 <path d="M11.99 18.54l-7.37-5.73L3 14.07l9 7 9-7-1.63-1.27-7.38 5.74zM12 16l7.36-5.73L21 9l-9-7-9 7 1.63 1.27L12 16z" />
             </svg>
             <div class="weather_layers">
-                <label for="precipitation"><input type="checkbox" id="precipitation" checked> Precipitation</label>
-                <label for="temperature"><input type="checkbox" id="temperature"> Temperature</label>
+                <label for="precipitation"><input type="checkbox" id="precipitation"> Precipitation</label>
+                <label for="temperature"><input type="checkbox" id="temperature" checked> Temperature</label>
                 <label for="clouds"><input type="checkbox" id="clouds"> Clouds</label>
                 <label for="wind"><input type="checkbox" id="wind"> Wind</label>
                 <div class="measure">
